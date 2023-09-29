@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DevJane Portfolio Website</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" 
+        integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />  
+        
+        <!-- Update these with your own fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Roboto+Slab:400,700&display=swap" rel="stylesheet"> 
+        
+        <link rel="stylesheet" href="css/style.css">
+
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <img src="img/devjane.png" alt="">
+            </div>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="index.html#services" class="nav__link">My Services</a></li>
+                    <li class="nav__item"><a href="index.html#about" class="nav__link">About me</a></li>
+                    <li class="nav__item"><a href="index.html#work" class="nav__link">My Work</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+
+        <section class="intro portfolio-intro">
+            <h1 class="section__title section__title--intro">
+                Oldagram<strong>web app</strong>
+            </h1>
+            <p class="section__subtitle section__subtitle--intro">HTML & CSS</p>
+            <img src="img/oldagram.png" alt="" class="intro__img">
+
+        </section>
+        
+        
+        <div class="portfolio-item-individual">
+            <div >
+                <a class="" target="_blank" href="https://github.com/RealChoki/My-Projects/tree/main/HTML%20%26%20CSS/Oldagram"><i class="fab fa-github"></i> GitHub Repo</a>
+                <a class="" target="_blank" href="#"><i class="fas fa-eye"></i> Live version   </a>
+            </div>
+            <p>This Web application is the main layout of an Instagram clone. It utilizes the power of vanilla JavaScript along with some well-crafted HTML and CSS skills to create an intuitive and user-friendly interface.</p>
+            <p>When a user taps on the heart icon, the system already triggers an interactive animation that visually represents the action of liking the post. This animation includes the heart changing color to indicate that the like has been registered. Additionally, the number of likes associated with the post is incremented by one, displaying the updated count to reflect the user's engagement.</p>
+            <p>The implementation of the like function utilizes JavaScript to handle the logic behind it. Event listeners are set up to detect when a user clicks on the heart icon, triggering a predefined function that updates the like count and applies the necessary visual changes.</p>
+        </div>
+        
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <!-- replace with your own email address -->
+            <a href="mailto:rafaatchoki2003@gmail.com" class="footer__link">rafaatchoki2003@gmail.com</a>
+            <ul class="social-list">
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://github.com/RealChoki">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </li>
+            </ul>
+        </footer>
+        
+        
+        <script src="js/index.js"></script>
+        
+    </body>
+</html>

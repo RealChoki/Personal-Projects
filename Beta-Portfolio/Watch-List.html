@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DevJane Portfolio Website</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" 
+        integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />  
+        
+        <!-- Update these with your own fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Roboto+Slab:400,700&display=swap" rel="stylesheet"> 
+        
+        <link rel="stylesheet" href="css/style.css">
+
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <img src="img/devjane.png" alt="">
+            </div>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="index.html#services" class="nav__link">My Services</a></li>
+                    <li class="nav__item"><a href="index.html#about" class="nav__link">About me</a></li>
+                    <li class="nav__item"><a href="index.html#work" class="nav__link">My Work</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+
+        <section class="intro portfolio-intro">
+            <h1 class="section__title section__title--intro">
+                Movie Watchlist<strong>web app</strong>
+            </h1>
+            <p class="section__subtitle section__subtitle--intro">JS, HTML & CSS</p>
+            <img src="img/watch-list.PNG" alt="" class="intro__img">
+
+        </section>
+        
+        
+        <div class="portfolio-item-individual">
+            <div >
+                <a class="" target="_blank" href="https://github.com/RealChoki/My-Projects/tree/main/API/Movie%20Watchlist"><i class="fab fa-github"></i> GitHub Repo</a>
+                <a class="" target="_blank" href="https://choki-movie-watchlist.netlify.app"><i class="fas fa-eye"></i> Live version   </a>
+            </div>
+            <p>The goal of this project is to create a website that allows users to search for movies, view information about them, and add them to their personal watchlist. The website is built using HTML, CSS, JavaScript, and an API for retrieving movie data. Additionally, local storage will be utilized to store the user's watchlist, allowing them to add and remove movies as desired.</p>
+            <p>The website provides a search bar where users can enter the name of a movie they want to find. JavaScript will handle the search functionality by making API requests to retrieve relevant movie data based on the user's input.</p>
+            <p>Users have the ability to add movies to their watchlist by clicking on a "Add to Watchlist" button or icon associated with each movie. The selected movies will be stored in the browser's local storage, allowing users to access their watchlist even if they navigate away from the website or close the browser.</p>
+            <p>The website includes a dedicated section or page where users can view their saved watchlist. This section will retrieve the movie data from local storage and display it in a user-friendly format. Users will also be able to remove movies from their watchlist with a single click, updating the local storage accordingly.</p>
+        </div>
+        
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <!-- replace with your own email address -->
+            <a href="mailto:rafaatchoki2003@gmail.com" class="footer__link">rafaatchoki2003@gmail.com</a>
+            <ul class="social-list">
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://github.com/RealChoki">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </li>
+            </ul>
+        </footer>
+        
+        
+        <script src="js/index.js"></script>
+        
+    </body>
+</html>
