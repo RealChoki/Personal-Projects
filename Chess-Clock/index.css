@@ -1,0 +1,658 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  user-select: none !important;
+}
+
+html{
+  overflow: hidden;
+}
+/* Typography */
+
+.clock {
+    font-family: "EB Garamond", serif;
+    font-size: 5em;
+    color: rgb(50, 50, 50);
+}
+
+.count-moves {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1em;
+    font-style: italic;
+    margin-right: 2em;
+}
+
+.time-mode {
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.background-gray{
+  background-color: #585451;
+}
+
+/* Layout */
+body {
+  background-color: whitesmoke;
+}
+
+body header {
+  background-color: dimgrey;
+  width: 100%;
+}
+
+header div {
+  margin-top: 0.4em;
+}
+
+header button {
+  padding: 0;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+#reset-btn {
+  transform: rotate(45deg) scaleX(-1);
+}
+
+#play-btn {
+  transform: scale(130%);
+}
+
+
+.material-symbols-outlined {
+  color: rgb(190, 190, 190);
+  cursor: pointer;
+}
+
+#change-time span,
+#sec-change-time span {
+  color: rgb(50, 50, 50);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  pointer-events: none;
+}
+
+.overlay.active {
+  display: block;
+  pointer-events: all;
+}
+
+/* Vertical Screen */
+
+
+/* Time Adjust */
+.first-tapping-field, .second-tapping-field {
+  cursor: default;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.title-timer {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  border-bottom: 1px solid #696969;
+}
+
+.small {
+  transform: scale(50%);
+  margin-left: 7px;
+  margin-top: 10px;
+}
+
+.adjust-time,
+.adjust-time2 {
+  width: 210px;
+  height: 180px;
+  background-color: #26221f;
+  border-radius: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 20px black;
+}
+
+.small-title {
+  font-size: 0.7rem;
+  margin: 0;
+  color: #86837e;
+  margin-top: 10px;
+}
+
+.pick-time input,
+.pick-time2 input {
+  width: 50px;
+  height: 50px;
+  margin-top: 15px;
+  text-align: center;
+  background-color: #332f2b;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+  appearance: none;
+}
+
+.pick-time,
+.pick-time2 :first-child {
+  margin-left: 12px;
+}
+
+.pick-time,
+.pick-time2 :last-child {
+  margin-right: 12px;
+}
+
+.pick-time,
+.pick-time2 {
+  display: flex;
+  justify-content: space-around;
+}
+
+.input-label label {
+  font-size: 0.6rem;
+  color: #86837e;
+  margin-top: 5px;
+}
+
+.input-label {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 10px;
+  margin-bottom: 20px;
+  margin-right: 6px;
+}
+
+.papa button {
+  font-size: 0.8rem;
+  color: white;
+}
+
+.papa {
+  display: flex;
+  justify-content: end;
+  margin-right: 15px;
+}
+
+.time-separator {
+  display: inline-block;
+  color: white;
+  font-size: 2.1rem;
+  margin-top: 15px;
+}
+
+#timer-link {
+  text-decoration: none;
+}
+
+/* Time Control */
+.time-control-main {
+  background-color: #585451;
+  padding: 0;
+}
+
+.time-control-main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 55%;
+  height: 55%;
+  margin: 20px 0px;
+}
+
+.title-back {
+  display: flex;
+}
+
+.title-back p {
+  color: whitesmoke;
+  margin-bottom: 0;
+}
+
+.white-smoke{
+  color: whitesmoke;
+}
+
+.custom-time {
+  text-decoration: none;
+  color: white;
+  border: 1px solid white;
+  padding: 0px 15px 5px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.custom-time:hover {
+  color: white;
+}
+
+.plus {
+  font-size: 23px;
+  color: var(--selectedColor)
+}
+
+.start-btn {
+  padding: 10px 0;
+  border-radius: 10px;
+  color: white;
+  box-shadow: 0px 3.5px var(--selectedColorDarker);
+  font-weight: bolder;
+  font-size: 1.2rem;
+  width: 100%;
+  margin-bottom: 1em;
+  background-color: var(--selectedColor);
+
+}
+
+.container {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #585451;
+}
+
+.container-presets{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container h6, .container-presets h6 {
+  color: white;
+  margin: 20px 0px;
+}
+
+.radio-options {
+  max-height: 88px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+  width: 100%;
+  margin-left: 0.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.radio-options::-webkit-scrollbar {
+  display: none;
+}
+
+label {
+  color: white;
+}
+
+.custom-radio {
+  display: none;
+}
+
+.custom-radio + label {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
+
+.custom-radio + label::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--selectedColor);
+  border-radius: 50%;
+}
+
+.custom-radio:checked + label::before {
+  background-color: var(--selectedColor);
+}
+
+.move-right{
+  margin-left: 6.9em;
+  font-size: 19px;
+}
+
+
+/* Theme color */
+
+.color-theme{
+  width: 250px;
+  height: 150px;
+  background-color: #696969;
+  border-radius: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 20px black;
+}
+
+.small-title-color {
+  font-size: 0.7rem;
+  margin: 0;
+  color: whitesmoke;
+  margin-top: 10px;
+}
+
+.color-choice{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 1em 0.5em;
+}
+
+.form-check-input{
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.form-check-input:checked {
+ background-color: #585451;
+}
+
+.blue{
+  background-color: #0680BB;
+  border: none;
+}
+.green{
+  background-color: #7FA44F;
+  border: none;
+}
+.yellow{
+  background-color: #C0A35A;
+  border: none;
+}
+.red{
+  background-color: #F28275;
+  border: none;
+}
+.light-blue{
+  background-color: #1CAFA7;
+  border: none;
+}
+.orange{
+  background-color: #E58F2A;
+  border: none;
+}
+
+.title-timer2{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  border-bottom: 1px solid #585451;
+  
+}
+
+.color-theme button{
+  width: 60px;
+  height: 30px;
+  margin: 0 auto;
+  font-size: small;
+  padding: 0;
+  margin-left: 7.4em;
+}
+
+/* custom time */
+
+.error{
+  display: flex;
+  gap: 4px;
+  color: red;
+  font-weight: bold;
+}
+
+.error2{
+  display: flex;
+  gap: 4px;
+  color: red;
+  font-weight: bold;
+}
+
+.red-color{
+  color: red;
+}
+
+.justtake{
+  background-color: var(--selectedColor2);
+  box-shadow: 0px 3.5px var(--selectedColorDarker2);
+}
+
+.custom-time-name{
+  background-color: #696969;
+  border: none;
+  padding: 15px 10px;
+  width: 100%;
+  margin: 20px 0;
+  border-radius: 10px;
+  color: white;
+}
+
+.custom-time-name::-webkit-input-placeholder{
+  color: whitesmoke;
+}
+
+.custom-time-field, .custom-increment-field{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.custom-time-field{
+  border-bottom: 2px solid #696969;
+  padding-bottom: 10px;
+}
+
+.top{
+  margin-top: 13px;
+}
+
+.custom-time-field h6{
+  margin-right: 3em;
+  margin-left: 0.4em;
+}
+
+.custom-increment-field h6{
+  margin-right: 3.4em;
+  margin-left: 0.4em;
+}
+
+.custom-time-input, .custom-increment-input{
+  width: 35px !important;
+  height: 35px !important ;
+  margin: 0 !important;
+  font-size: 1.5rem !important;
+  border-radius: 3px !important;
+}
+
+.custom-time-input:focus, .custom-increment-input:focus{
+  background-color: var(--selectedColor2);
+}
+
+.custom-time-separator{
+  display: inline-block;
+  color: white;
+  font-size: 1.5rem;
+  margin: 0 4px;
+  padding: 0;
+}
+
+.input-label-custom label {
+  font-size: 0.5rem;
+  color: #86837e;
+}
+
+.input-label-custom {
+  display: flex;
+  justify-content: space-around;
+}
+
+.right{
+  margin-right: 11px;
+}
+
+.little-right{
+  margin-right: 3px;
+}
+
+.little-left{
+  margin-left: 8px;
+}
+
+.full-width{
+  width: 100%;
+}
+
+/* edit presets */
+.form-check {
+  max-height: 130px;
+  overflow-y: auto;
+  margin-bottom: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-left: 0.5em;
+}
+
+.form-check::-webkit-scrollbar{
+  appearance: none;
+}
+
+.presets-box{
+  display: flex;
+  justify-content: space-between;
+}
+
+.presets-childs{
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-right: 1em;
+}
+
+.preset-check{
+  background-color: #585451;
+  border: 3px solid whitesmoke;
+  transform: scale(70%);
+  margin-bottom: 4px;
+}
+
+.preset-check:checked{
+  background-color: var(--selectedColor3);
+  border-color: var(--selectedColor3);
+}
+
+.preset-check:focus{
+  border-color: var(--selectedColor3);
+  box-shadow: 0px 0px 5px var(--selectedColor3);
+}
+
+.plus2{
+  font-size: 23px;
+  color: var(--selectedColor3);
+}
+.edit-name{
+  background-color: #585451;
+  border: none;
+  padding: 8px 12px;
+  width: 100%;
+  margin: 0px 10px;
+  border-radius: 10px;
+  color: white;
+}
+
+.edit-name::-webkit-input-placeholder{
+  color: var(--placeholder-color);
+}
+
+.start-btn-other {
+  padding: 10px 0;
+  border-radius: 10px;
+  color: white;
+  box-shadow: 0px 3.5px var(--selectedColorDarker3);
+  font-weight: bolder;
+  font-size: 1.2rem;
+  width: 100%;
+  margin-bottom: 2em ;
+  background-color: var(--selectedColor3);
+}
+
+.move-right-other{
+  margin-left: 7.5em;
+  font-size: 19px;
+}
+
+@media (max-width: 450px){
+  .custom-increment-field h6{
+    margin-right: 1.4em;
+  }
+
+
+  .container{
+    width: 100%;
+    padding: 1em;
+  }
+
+  .radio-options {
+    max-height: 320px;
+    gap: 1.5em;
+  }
+  #sortable {
+    max-height: 400px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    width: 100%;
+    margin-left: 0.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .form-check{
+    max-height: 460px;
+
+  }
+
+  .go-bottom{
+    bottom: 0;
+    position: fixed;
+    width: 95%;
+  }
+
+  .logo{
+    width: 195px;
+    height: 30px;
+  }
+}
+
+

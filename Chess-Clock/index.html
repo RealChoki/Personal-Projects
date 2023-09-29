@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" class="vh-100">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- http://getbootstrap.com/docs/5.1/ -->
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" rel="stylesheet">
+    <script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"></script>
+
+
+    <!-- Google fonts API -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&display=swap" rel="stylesheet">
+
+    <!-- Material Icons API -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <!-- style sheet -->
+    <!-- <link href="../rotate.css" rel="stylesheet"> -->
+    <link href="../index.css" rel="stylesheet">
+    <link href="../horizontal.css" rel="stylesheet">
+    
+    <title>Chess Timer</title>
+</head>
+<body class="h-100">
+    
+    <header class="d-flex justify-content-between align-items-center py-3 px-3">
+        <div>
+            
+            <button id="reset-btn" class="mx-3">
+                <a href="/">
+                    <span class="material-symbols-outlined">
+                        Replay
+                    </span>
+                </a>
+            </button>
+            
+            <button id="play-btn" class="mx-3">
+                <span class="material-symbols-outlined">
+                    play_arrow
+                </span>
+            </button>
+        </div>
+        <div>
+            
+            <a href="main/timecontrol.html" id="timer-link" class="mx-3">
+                <button id="timer-btn">
+                    <span class="material-symbols-outlined">
+                        timer
+                    </span>
+                </button>
+            </a>
+            
+            <button id="volume-btn" class="mx-3">
+                <span id="volume-on" class="material-symbols-outlined">
+                    volume_up
+                </span>
+                
+                <span id="volume-off" class="material-symbols-outlined" hidden>
+                    volume_off
+                </span>
+            </button>
+        </div>
+    </header>
+    
+    
+    
+    <section class="text-center border-end first-tapping-field">
+        <div class="mt-4 w-100">
+            <p class="mt-3 mb-3 count-moves text-end">Moves: <span id="move-counter-1">0</span></p>
+            <h1 id="clock" class="clock mb-3">10:00</h1>
+            
+            <button id="change-time">
+                <span class="material-symbols-outlined hide">
+                    tune
+                </span>
+            </button>
+            
+            <p class="time-mode mt-1 mb-3 hide">10 min</p>
+        </div>
+    </section>
+    
+    <section class="text-center second-tapping-field">
+        <div class="mt-4 w-100">
+            <p class="mt-3 mb-3 count-moves text-end">Moves: <span id="move-counter-2">0</span></p>
+            <h1 id="clock2" class="clock mb-3">10:00</h1>
+            
+            <button  id="sec-change-time">
+                <span class="material-symbols-outlined hide">
+                    tune
+                </span>
+            </button>
+            
+            <p class="time-mode mt-1 mb-3 hide">10 min</p>
+        </div>
+    </section>
+    
+    
+    <div class="adjust-time hidden">
+        <div class="title-timer">
+            <span class="material-symbols-outlined small">
+                timer
+            </span>
+            <p class="small-title">ADJUST TIME</p>
+        </div>
+        <div class="time">
+            <div class="pick-time">
+                <input type="number" id="hours" min="0" max="99" value="00">
+                <span class="time-separator">:</span>
+                <input type="number" id="minutes" min="0" max="59" value="00">
+                <span class="time-separator">:</span>
+                <input type="number" id="seconds" min="0" max="59" value="00">
+            </div>
+            <div class="input-label">
+                <label for="hours">Hour</label>
+                <label for="minutes">Minute</label>
+                <label for="seconds">Second</label>
+            </div>
+            <div class="papa">
+                <button id="cancel">CANCEL</button>
+                <button id="save">SAVE TIME</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="adjust-time2 hidden">
+        <div class="title-timer">
+            <span class="material-symbols-outlined small">
+                timer
+            </span>
+            <p class="small-title">ADJUST TIME</p>
+        </div>
+        <div class="time">
+            <div class="pick-time2">
+                <input type="number" id="hours2" min="0" max="99" value="00">
+                <span class="time-separator">:</span>
+                <input type="number" id="minutes2" min="0" max="59" value="00">
+                <span class="time-separator">:</span>
+                <input type="number" id="seconds2" min="0" max="59" value="00">
+            </div>
+            <div class="input-label">
+                <label for="hours2">Hour</label>
+                <label for="minutes2">Minute</label>
+                <label for="seconds2">Second</label>
+            </div>
+            <div class="papa">
+                <button id="cancel2">CANCEL</button>
+                <button id="save2">SAVE TIME</button>
+            </div>
+        </div>
+    </div>
+    <audio id="click-sound" autoplay="false">
+        <source src="sound-effects/chess-clock-sound.m4a" type="audio/mpeg">
+    </audio>
+    <script type="module" src="index.js"></script>
+</body>
+</html>

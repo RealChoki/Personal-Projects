@@ -1,0 +1,28 @@
+body {
+    display: grid;
+    grid-template-areas:
+        "section1"
+        "header"
+        "section2";
+    grid-template-rows: auto auto auto;
+    grid-template-columns: 1fr;
+    height: 100vh;
+    margin: 0;
+}
+
+header {
+    grid-area: header;
+}
+
+.first-tapping-field {
+    grid-area: section1;
+    transform: rotate(180deg);
+}
+
+.second-tapping-field {
+    grid-area: section2;
+}
+
+.adjust-time{
+    transform: translate(-50%, -50%) rotate(180deg);
+}
