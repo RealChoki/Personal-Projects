@@ -373,6 +373,10 @@ label {
   cursor: pointer;
 }
 
+.form-check{
+  margin-left: 13px !important;
+}
+
 .form-check-input:checked {
  background-color: #585451;
 }
