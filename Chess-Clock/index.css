@@ -276,7 +276,6 @@ input[type="number"]::-webkit-inner-spin-button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid #585451;
 }
 
 .container-presets{
@@ -557,7 +556,6 @@ label {
   display: flex;
   gap: 15px;
   align-items: center;
-  margin-right: 1em;
 }
 
 .preset-check{
@@ -621,6 +619,7 @@ label {
   .container{
     width: 100%;
     padding: 1em;
+  
   }
 
   .radio-options {
